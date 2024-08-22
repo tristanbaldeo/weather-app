@@ -10,7 +10,54 @@
     </head>
     <body>
         <div id="content">
+            <div class="header">
+                <header class="header-text">Weather</header>
+            </div>
 
+            <div class="search-container">
+                <input type="text" placeholder="City, State, ZIP code..." class="location-search">
+                <img class="submit" src="insert search svg here" width="20px">
+            </div>
+
+            <div class="degrees-container">
+                <p class="farenheit-btn active">°F/mph</p>
+                <div class="metric-toggle-container">
+                    <label class="metric-toggle">
+                        <input type="checkbox" id="metric-toggle">
+                        <div class="circle"></div>
+                    </label>
+                </div>
+                <p class="celsius-btn">°C/kph</p>
+            </div>
+
+            <div class="weather-container">
+                <div class="location-info-container">
+                    <p class="location-header">Miami, Florida</p>
+                    <p class="location-country">United States</p>
+                    <p class="last-updated">Last Updated: August 22, 2024 at 3:00 PM</p>
+                </div>
+                <div class="conditions-container">
+                    <img width="130px" src="insert conditions picture here">
+                    <div class="conditions-text-container">
+                        <p class="temp-text">82°F</p>
+                        <p class="conditions-text">Light rain</p>
+                        <div class="max-min-temp-container">
+                            <p class="max-min-temp">High: 86°F</p>
+                            <p class="max-min-temp">Low: 78°F</p>
+                        </div>
+                    </div>
+                    <div class="conditions-details-container">
+                        <p>Feels Like:</p>
+                        <p class="right">82°F</p>
+                        <p>Humidity:</p>
+                        <p class="right">88%</p>
+                        <p>Wind:</p>
+                        <p class="right">13.6mph SW</p>
+                        <p>Chance of Rain:</p>
+                        <p class="right">88%</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
