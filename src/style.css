@@ -170,3 +170,54 @@ input[type="checkbox"] {
     gap: 8px;
     justify-items: end;
 }
+
+@media (max-width: 825px) {
+    .header {
+        width: 80%;
+        font-size: 32px;
+        flex-wrap: nowrap;
+    }
+
+    .location-container {
+        max-width: 518px;
+        width: 80%;
+    }
+
+    .location-header {
+        font-size: 24px;
+    }
+
+    .temp-text {
+        font-size: 40px;
+    }
+
+    .conditions-text {
+        font-size: 20px;
+    }
+
+    .weather-container {
+        min-width: 400px;
+        width: 85%;
+        padding: 8%;
+    }
+
+    .conditions-container {
+        display: grid;
+        grid-template-columns: 5fr;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .conditions-details-container {
+        grid-column: 1/-1;
+        grid-template-columns: 1fr 1fr;
+        gap: 0px;
+        width: 90%;
+        justify-content: left;
+        justify-items: left;
+    }
+
+    .conditions-details-container .right {
+        justify-self: end;
+    }
+}
