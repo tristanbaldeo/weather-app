@@ -20,7 +20,7 @@ body {
 .header {
     display: flex;
     align-items: center;
-    color: rgb(25, 25, 25);
+    color: #040404;
     font-size: 40px;
     font-weight: 700;
     justify-content: center;
@@ -38,7 +38,7 @@ body {
 
 .location-search {
     font-size: 16px;
-    color: #0e0e0e;
+    color: #040404;
     padding: 4px 16px;
     background-color: #f4f4f4;
     box-shadow: 1px 1px rgba(25, 25, 25, 0.25);
@@ -66,7 +66,7 @@ body {
 }
 
 .active {
-    color: #0e0e0e;
+    color: #040404;
     transition: 0.3s;
 }
 
@@ -104,7 +104,7 @@ input[type="checkbox"] {
     margin-bottom: 10%;
     padding: 48px;
     border-radius: 48px;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(205, 205, 205, 0.25);
     box-shadow: 1px 1px 12px rgba(25, 25, 25, 0.05);
     color: #040404;
     display: grid;
