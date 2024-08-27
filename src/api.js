@@ -28,7 +28,7 @@ const weatherData = {
 // API call to fetch weather data based on location input
 async function fetchWeatherData() {
     try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=54db39cdb2854b31a44231017242508&q=${location}&days=6&aqi=no&alerts=no`)
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=54db39cdb2854b31a44231017242508&q=${location}&days=6&aqi=no&alerts=no`)
         if (response.ok == false) {
             throw new Error("Something went wrong");
         }
@@ -78,7 +78,6 @@ async function updateWeather(location) {
         document.querySelector('.last-updated').textContent = `${weatherData.lastUpdated}`;
         document.querySelector('.temp-text').textContent = `${weatherData.temperature.currentF}°F`;
         document.querySelector('.conditions-text').textContent = `${weatherData.conditions}`;
-        document.querySelector('.max-country').textContent = `${weatherData.country}`;
 
         const maxMinTempElements = document.querySelectorAll('.max-min-temp');
         const maxTempElement = maxMinTempElements[0];
