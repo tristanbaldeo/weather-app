@@ -60,6 +60,15 @@ async function fetchWeatherData() {
 }
 
 // Capture input from the search bar
+export function initializeSearch() {
+    document.querySelector('.location-search').addEventListener('keypress', async (e) => {
+        if (e.key === 'Enter') {
+            const location = e.target.value;
+            await updateWeather(location);
+        }
+    });
+};
+
 // Handle responses, error and update UI
 async function updateWeather(location) {
     const updatedData = await fetchWeatherData(location);
