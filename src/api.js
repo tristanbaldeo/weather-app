@@ -1,4 +1,5 @@
 // Search functionality
+// Object storing weather data
 const weatherData = {
     city: '',
     state: '',
@@ -60,7 +61,33 @@ async function fetchWeatherData() {
 
 // Capture input from the search bar
 // Handle responses, error and update UI
+async function updateWeather(location) {
+    const updatedData = await fetchWeatherData(location);
+    if (updatedData) {
+        document.querySelector('.location-header').textContent = `${weatherData.city}, ${weatherData.state}`;
+        document.querySelector('.location-country').textContent = `${weatherData.country}`;
+        document.querySelector('.last-updated').textContent = `${weatherData.lastUpdated}`;
+        document.querySelector('.temp-text').textContent = `${weatherData.temperature.currentF}°F`;
+        document.querySelector('.conditions-text').textContent = `${weatherData.conditions}`;
+        document.querySelector('.max-country').textContent = `${weatherData.country}`;
 
+        const maxMinTempElements = document.querySelectorAll('.max-min-temp');
+        const maxTempElement = maxMinTempElements[0];
+        const minTempElement = maxMinTempElements[1];
+        maxTempElement.textContent = `High: ${weatherData.temperature.highF}°F`;
+        minTempElement.textContent = `Low: ${weatherData.temperature.lowF}°F`;
+
+        const rightElements = document.querySelectorAll('.right');
+        const feelsLikeElement = rightElements[0];
+        const humidityElement = rightElements[1];
+        const windElement = rightElements[2];
+        const chanceOfRainElement = rightElements[3];
+        feelsLikeElement.textContent = `${weatherData.temperature.feelsLikeF}°F`;
+        humidityElement.textContent = `${weatherData.humidity}%`;
+        windElement.textContent = `${weatherData.wind.speedMph}`;
+        chanceOfRainElement.textContent = `${weatherData.chanceOfRain}%`;
+    }
+}
 
 // Temperature toggle
 
