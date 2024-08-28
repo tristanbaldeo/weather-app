@@ -26,7 +26,7 @@ const weatherData = {
 };
 
 // API call to fetch weather data based on location input
-async function fetchWeatherData() {
+async function fetchWeatherData(location) {
     try {
         const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=54db39cdb2854b31a44231017242508&q=${location}&days=6&aqi=no&alerts=no`)
         if (response.ok == false) {
@@ -65,6 +65,8 @@ export function initializeSearch() {
         if (e.key === 'Enter') {
             const location = e.target.value;
             await updateWeather(location);
+            console.log(location)
+            console.log(weatherData)
         }
     });
 };
@@ -75,7 +77,7 @@ async function updateWeather(location) {
     if (updatedData) {
         document.querySelector('.location-header').textContent = `${weatherData.city}, ${weatherData.state}`;
         document.querySelector('.location-country').textContent = `${weatherData.country}`;
-        document.querySelector('.last-updated').textContent = `${weatherData.lastUpdated}`;
+        document.querySelector('.last-updated').textContent = `Last updated: ${weatherData.lastUpdated}`;
         document.querySelector('.temp-text').textContent = `${weatherData.temperature.currentF}°F`;
         document.querySelector('.conditions-text').textContent = `${weatherData.conditions}`;
 
@@ -92,7 +94,7 @@ async function updateWeather(location) {
         const chanceOfRainElement = rightElements[3];
         feelsLikeElement.textContent = `${weatherData.temperature.feelsLikeF}°F`;
         humidityElement.textContent = `${weatherData.humidity}%`;
-        windElement.textContent = `${weatherData.wind.speedMph}`;
+        windElement.textContent = `${weatherData.wind.speedMph}MPH ${weatherData.wind.direction}`;
         chanceOfRainElement.textContent = `${weatherData.chanceOfRain}%`;
     }
 }
