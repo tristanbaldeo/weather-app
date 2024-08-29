@@ -72,7 +72,7 @@ export function initializeSearch() {
 };
 
 // Handle responses, error and update UI
-async function updateWeather(location) {
+export async function updateWeather(location) {
     const updatedData = await fetchWeatherData(location);
     if (updatedData) {
         document.querySelector('.location-header').textContent = `${weatherData.city}, ${weatherData.state}`;
