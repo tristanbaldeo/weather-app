@@ -1,6 +1,8 @@
 # Weather App
 A dynamic weather application that fetches and displays current weather data based on user input. Users can search for a location to view the current weather, including temperature, conditions, wind speed, humidity, and more. The app also supports toggling between Fahrenheit and Celsius.
 
+Live Link: https://tristanbaldeo.github.io/weather-app/
+
 # Table of Contents
 - Features
 - Installation
